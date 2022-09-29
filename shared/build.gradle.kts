@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
+    alias(libs.plugins.jetbrains.compose)
 }
 
 kotlin {
@@ -28,6 +29,7 @@ kotlin {
          */
         val commonMain by getting {
             dependencies {
+                api(compose.runtime)
                 //Network
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.logging)
